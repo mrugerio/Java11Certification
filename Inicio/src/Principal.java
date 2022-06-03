@@ -1,7 +1,7 @@
 
 public class Principal {
 
-	public static void main(String[] args) {
+	public static void main(String... options) {
 
 		String x = "Hola";
 		String y = "Hola";
