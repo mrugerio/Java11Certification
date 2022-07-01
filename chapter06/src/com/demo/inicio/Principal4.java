@@ -26,10 +26,9 @@ public class Principal4 {
 		Collections.sort(listaEmpleados,comparator);
 		for (Empleado e:listaEmpleados) System.out.println(e);
 		
-		comparator = (emp1, emp2) -> (int)(emp1.getSueldo()-emp2.getSueldo());
 		
 		System.out.println("Lista Empleados por Sueldo Principal4");
-		Collections.sort(listaEmpleados,comparator);
+		Collections.sort(listaEmpleados, (emp1, emp2) -> (int)(emp2.getSueldo()-emp1.getSueldo()) );
 		for (Empleado e:listaEmpleados) System.out.println(e);
 		
 		
