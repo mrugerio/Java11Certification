@@ -1,7 +1,5 @@
 package com.demo.inicio;
 
-import java.util.function.Predicate;
-
 import com.demo.inicio.interfaces.Predicado;
 
 public class Principal5 {
@@ -13,6 +11,9 @@ public class Principal5 {
 		Predicado<String> preString = s -> s.equals("Hola");
 		
 		preString.probarDefault();
+		
+		Predicado<String> returnLambdaString = Predicado.returnPredicado();
+		//Predicado<String> returnLambdaString =  x -> true;
 	}
 
 }
