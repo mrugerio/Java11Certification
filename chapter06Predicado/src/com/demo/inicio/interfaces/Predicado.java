@@ -7,6 +7,10 @@ public interface Predicado<T> {
 	
 	boolean probar(T t);
 	
+	default Predicado<T> negate() {
+		return x -> !this.probar(x);
+	}
+	
 	static <T> Predicado<T> negate(Predicado<T> p) {
 		return x -> !p.probar(x);
 	}
@@ -24,8 +28,16 @@ public interface Predicado<T> {
 //	
 //	}
 	
+	default  Predicado<T> and(Predicado<T> p02) {
+		return x -> (this.probar(x) && p02.probar(x));
+	}
+	
 	static <T> Predicado<T> and(Predicado<T> p01, Predicado<T> p02) {
 		return x -> (p01.probar(x) && p02.probar(x));
+	}
+	
+	default  Predicado<T> or(Predicado<T> p02) {
+		return x -> (this.probar(x) || p02.probar(x));
 	}
 	
 	static <T> Predicado<T> or(Predicado<T> p01, Predicado<T> p02) {
@@ -40,7 +52,7 @@ public interface Predicado<T> {
 		return (b1 && b2);
 	}
 	
-	/*
+	
 	static void probarStatic() {
 		System.out.println("Probar static");
 	}
@@ -52,5 +64,5 @@ public interface Predicado<T> {
 	static <T> Predicado<T> returnPredicado() {
 		return x -> true;
 	}
-	*/
+	
 }
