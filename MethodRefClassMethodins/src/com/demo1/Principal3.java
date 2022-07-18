@@ -1,6 +1,6 @@
 package com.demo1;
 
-import java.util.function.UnaryOperator;
+import java.util.function.BinaryOperator;
 
 public class Principal3 {
 
@@ -9,10 +9,10 @@ public class Principal3 {
 		String cadena1 = "Hello ";
 		String cadena2 = "Java";
 		
-		//UnaryOperator<String> uo = s -> cadena1.concat(s);
-		//UnaryOperator<String> uo = cadena1::concat;
+		//BinaryOperator<String> bo = (s1,s2) -> s1.concat(s2);
+		//BinaryOperator<String> bo = String::concat;
 		
-		String res = Utils.transforma(cadena2, cadena1::concat);
+		String res = Utils.transforma(cadena1, cadena2, String::concat);
 		
 		System.out.println(res);
 		

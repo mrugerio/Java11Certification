@@ -1,6 +1,9 @@
 package com.demo1;
 
 import java.util.function.BiConsumer;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Principal {
 
@@ -14,7 +17,12 @@ public class Principal {
 		BiConsumer<Mecanico,Carro> biConsumer = Mecanico::arreglar;
 		
 		biConsumer.accept(insMec,insCarro);
-
+		
+		Supplier<Boolean> ps = ()-> true;
+		boolean r = ps.get();
+		
+		BiPredicate<String,Object> bp = (a, b) -> a.startsWith("test");
+		
 	}
 
 }
